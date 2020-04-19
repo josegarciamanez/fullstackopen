@@ -77,3 +77,98 @@ const Content = ... {
 ```
 
 > La comunicación de nuestra aplicación es realmente primitiva en este momento, ya que se basa en variables individuales. La situación pronto mejorará.
+
+### 1.3: información del curso paso 3
+
+> Pasemos a usar un objeto en nuestra aplicación. Cambie las definiciones variables de la aplicación componente al siguiente formato y cambie todas las partes de la aplicación para que funcione nuevamente:
+
+```jsx
+const App = () => {
+  const course = 'Half Stack application development';
+  const part1 = {
+    name: 'Fundamentals of React',
+    exercises: 10,
+  };
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7,
+  };
+  const part3 = {
+    name: 'State of a component',
+    exercises: 14,
+  };
+
+  return <div>...</div>;
+};
+```
+
+### 1.4: información del curso paso 4
+
+> Y coloque los objetos en una tabla, es decir, cambie las definiciones de variables de la aplicación al siguiente formato y cambie todas las partes de la aplicación en consecuencia:
+
+```jsx
+const App = () => {
+  const course = 'Half Stack application development';
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10,
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7,
+    },
+    {
+      name: 'State of a component',
+      exercises: 14,
+    },
+  ];
+
+  return <div>...</div>;
+};
+```
+
+> NOTA: en este punto, puede suponer que siempre hay tres elementos en una tabla, lo que significa que no tiene que recorrer la tabla haciendo un bucle. Volvamos a la representación de componentes basados ​​en los objetos de la tabla con más detalle en la siguiente parte del curso .
+> Sin embargo, no se preocupan por las diferentes criaturas componente de aplicación de los componentes contenidos en el contenido y el total propseina separada, sino directamente en una tabla:
+
+```jsx
+const App = () => {
+  // const-määrittelyt
+
+  return (
+    <div>
+      <Header course={...} />
+      <Content parts={parts} />
+      <Total parts={parts} />
+    </div>
+  )
+}
+```
+
+### 1.5: información del curso paso 5
+
+> Llevemos el cambio un paso más allá, es decir, hagamos que el curso y sus partes sean un solo objeto Javascript. Repara todo lo que se rompa.
+
+```jsx
+const App = () => {
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10,
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7,
+      },
+      {
+        name: 'State of a component',
+        exercises: 14,
+      },
+    ],
+  };
+
+  return <div>...</div>;
+};
+```
